@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux'; // Nou permettra d'entourer notre application comme avec api context
+import store from './redux/store'  // On importe le store
 
 ReactDOM.render(
-  <React.StrictMode>
+ <Provider store={store}>  {/* Il entourera toute notre application et hydratera nos composants (App) */}
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
